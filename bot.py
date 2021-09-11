@@ -218,6 +218,7 @@ async def on_message(message):
                       msgg = await message.channel.send(embed=embed)
                       await asyncio.sleep(120)
                       await msgg.delete()
+                      await message.delete()
                               
       except BaseException as e:
           embed = discord.Embed(title="❌오류 발생!", description="", color=0x5CD1E5)
@@ -272,6 +273,7 @@ async def on_message(message):
             msgg = await message.channel.send(embed=embed)
             await asyncio.sleep(120)
             await msgg.delete()
+            await message.delete()
 
 
       await bot.process_commands(message)
